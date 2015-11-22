@@ -14,7 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
     #getinvm simply return the value of the input in a variable invm. It doesn't calculate the inverse of x
     getinvm <- function() invm
     #To store the 4 functions in the function makeCacheMatrix, we need the function list(), 
-    #so that when we assign makeVector to an object, the object has all the 4 functions.
+    #so that when we assign makeCacheMatrix to an object, the object has all the 4 functions.
     list(set = set, get = get,
          setinvm = setinvm,
          getinvm = getinvm)
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
 cacheSolve <- function(x, ...) {
-    #The first thing cacheSolve does is to verify the value invm, stored previously with getmean, exists and is not NULL.
+    #The first thing cacheSolve does is to verify the value invm, stored previously with getinvm, exists and is not NULL.
     #If it exists in memory, it simply returns a message and the value invm
     invm <- x$getinvm()
         if(!is.null(invm)) {
